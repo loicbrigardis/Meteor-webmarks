@@ -16,5 +16,9 @@ export class BookmarksList {
     constructor() {
         this.bookmarks = Bookmarks.find();
     }
+
+    removeBookmark (bookmark) {
+        Bookmarks.remove(bookmark._id)
+    }
 }
 
