@@ -15,7 +15,7 @@ import template from './bookmarks-list.html';
 })
 
 export class BookmarksList {
-    bookmarks: Mongo.Cursor<Object>;
+    bookmarks: Mongo.Cursor<Bookmark>;
 
     constructor() {
         this.bookmarks = Bookmarks.find();
