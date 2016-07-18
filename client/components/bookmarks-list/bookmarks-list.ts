@@ -2,12 +2,16 @@ import 'reflect-metadata';
 import { Component } from '@angular/core';
 import { Bookmarks } from '../../../collections/bookmarks';
 import { Mongo } from 'meteor/mongo';
+import { ROUTER_DIRECTIVES }  from '@angular/router';
+import { BookmarksDetails } from '../bookmark-details/bookmark-details';
+
 
 import template from './bookmarks-list.html';
 
 @Component({
     selector: 'bookmarks-list',
-    template
+    template,
+    directives: [ROUTER_DIRECTIVES]
 })
 
 export class BookmarksList {
@@ -20,5 +24,6 @@ export class BookmarksList {
     removeBookmark (bookmark) {
         Bookmarks.remove(bookmark._id)
     }
+
 }
 
