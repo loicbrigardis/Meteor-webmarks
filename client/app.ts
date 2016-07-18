@@ -9,15 +9,16 @@ import { BookmarksDetails } from './components/bookmark-details/bookmark-details
 import { Bookmarks } from '../collections/bookmarks';
 import { Mongo } from 'meteor/mongo';
 import { provideRouter, RouterConfig, ROUTER_DIRECTIVES } from '@angular/router';
-
+import { LoginButtons } from 'angular2-meteor-accounts-ui';
 
 import template from './app.html';
  
 @Component({
   selector: 'app',
   template,
-  directives: [ROUTER_DIRECTIVES, BookmarksList, BookmarksForm]
+  directives: [LoginButtons, ROUTER_DIRECTIVES, BookmarksList, BookmarksForm]
 })
+
 class Webmarks { }
 
 const routes: RouterConfig = [

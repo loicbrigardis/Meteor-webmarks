@@ -5,7 +5,6 @@ import { Mongo } from 'meteor/mongo';
 import { ROUTER_DIRECTIVES }  from '@angular/router';
 import { BookmarksDetails } from '../bookmark-details/bookmark-details';
 
-
 import template from './bookmarks-list.html';
 
 @Component({

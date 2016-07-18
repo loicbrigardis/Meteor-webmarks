@@ -4,23 +4,26 @@
     <h2>{{ bookmark.title }}</h2>
     <p><strong>URL: </strong>{{ bookmark.url }}</p>
     <p><strong>Category: </strong>{{ bookmark.category }}</p>
-    <a href="{{bookmark.url}}" class="btn btn-default" target='_blank' >Visite website</a>
+    <a href="{{bookmark.url}}" class="btn btn-default" target='_blank'>Visite website</a>
 </header>
 
-<h3>Update Bookmark</h3>
 
-<form (submit)="updateBookmark(bookmark)">
-    <div class="form-group">
-        <label>Title</label>
-        <input type="text" class="form-control" [(ngModel)]="bookmark.title">
-    </div>
-    <div class="form-group">
-        <label>URL</label>
-        <input type="text" class="form-control" [(ngModel)]="bookmark.url">
-    </div>
-    <div class="form-group">
-        <label>Category</label>
-        <input type="text" class="form-control" [(ngModel)]="bookmark.category">
-    </div>
-    <button class="btn btn-primary">Save</button>
-</form>
+
+<div *ngIf="isOwner">
+    <h3>Update Bookmark</h3>
+    <form (submit)="updateBookmark(bookmark)">
+        <div class="form-group">
+            <label>Title</label>
+            <input type="text" class="form-control" [(ngModel)]="bookmark.title">
+        </div>
+        <div class="form-group">
+            <label>URL</label>
+            <input type="text" class="form-control" [(ngModel)]="bookmark.url">
+        </div>
+        <div class="form-group">
+            <label>Category</label>
+            <input type="text" class="form-control" [(ngModel)]="bookmark.category">
+        </div>
+        <button class="btn btn-primary">Save</button>
+    </form>
+</div>
